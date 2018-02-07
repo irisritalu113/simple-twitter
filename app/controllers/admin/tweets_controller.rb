@@ -5,6 +5,27 @@ class Admin::TweetsController < Admin::BaseController
     @tweets = Tweet.all
   end
 
+  def new
+    @tweet = Tweet.new
+  end
+
+  def create
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+      flash[:notice] = "Tweet was successfully created"
+      redirect_to admin_tweets_path
+    else
+      flash.now[:alert] = "Tweet was failed to create"
+      render :new
+    end
+  end
+
   def destroy
+  end
+
+  private
+
+  def tweet_params
+    params.require(:tweet).permit(:description)
   end
 end
