@@ -20,4 +20,16 @@ namespace :dev do
     end
   end
 
+
+  task fake_tweet: :environment do
+    Tweet.destroy_all
+    20.times do |i|
+      Tweet.create!(
+        description: "Here is description of the Tweet"
+      )
+    end
+    puts "have created fake Tweets"
+    puts "now you have #{Tweets.count} Tweets data"
+  end
+
 end
