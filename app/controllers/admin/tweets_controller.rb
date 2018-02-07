@@ -20,6 +20,10 @@ class Admin::TweetsController < Admin::BaseController
     end
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   def destroy
   end
 
