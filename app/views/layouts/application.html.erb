@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <!-- 先判斷 current_user 是否回傳使用者所屬的 User 資料 -->
     <% if current_user %>
       <% if current_user&.admin? %>
         <li><%= link_to 'Admin Panel', admin_restaurants_path %></li>
