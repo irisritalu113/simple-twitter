@@ -12,6 +12,8 @@ gem 'carrierwave'
 # resize image size
 # gem 'mini_magic
 gem 'kaminari'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
 
 gem 'ffaker'
 
